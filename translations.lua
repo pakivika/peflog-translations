@@ -52,7 +52,7 @@ local translations =
       {
         ["en"] = "\t\tPEF2\nafter medication",
         ["fi"] = "\t\tPEF2\nlääkkeen jälkeen",
-        ["no"] = "\t\tPER2\netter medisinering"
+        ["no"] = "\t\tPEF2\netter medisinering"
       },
 
     ["pef.tab"] =
@@ -122,7 +122,7 @@ local translations =
       {
         ["en"] = "Hint! You can have all the data to yourself. Add the log to the archive first and restore the archive next and then send the report to yourself before deleting.\n\nDo you really want to delete the archive permanently?",
         ["fi"] = "Vinkki! Näin säilytät kaikki tiedot itselläsi. Lisää loki ensin arkistoon, palauta sitten arkisto ja lähetä raportti itsellesi ennen poistamista.\n\nHaluatko varmasti poistaa arkiston pysyvästi?",
-        ["no"] = "Tips! Du kan lagre loggen til arkivet, og gjennopprette arkivet og sende rapporten til deg selv før du sletter.(?)"
+        ["no"] = "Tips! Du kan lagre loggen til arkivet, og gjennopprette arkivet og sende rapporten til deg selv før du sletter."
       },
 
     ["archive.dialog.text"] =
@@ -381,7 +381,7 @@ local translations =
       {
         ["en"] = "Fill your information in the My info -tab before sending.",
         ["fi"] = "Täytä omat tietosi Tietoni -välilehdellä ennen lähettämistä.",
-        ["no"] = "Fyll ut personalia i My info-fliken før sending."
+        ["no"] = "Fyll ut personalia i Min informasjon før sending."
       },
 
     ["save.button"] =
