@@ -24,7 +24,7 @@ local translations =
       {
         ["en"] = "Save PEF1 results before the medicication.",
         ["fi"] = "Tallenna PEF1 tulokset ennen lääkkeen ottamista.",
-        ["no"] = "Lagre PEF1 resultater før medisinering."
+        ["no"] = "Lagre PEF1-resultater før medisinering."
       },
 
     ["pef2.dialog.title"] =
