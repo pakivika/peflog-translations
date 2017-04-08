@@ -369,7 +369,7 @@ local translations =
       {
         ["en"] = "x = PEF before medication\nDV = Daily variation % and l/min",
         ["fi"] = "x = PEF ennen lääkettä\nDV = Päivittäisvaihtelu % ja l/min",
-        ["it"] = "x = PEF prima della medicazione\nDV = Variazione giornaliera % and 1/min",
+        ["it"] = "x = PEF prima della medicazione\nDV = Variazione giornaliera % e 1/min",
         ["no"] = "x = PEF før medisinering\nDV = Daglig variasjon % og l/min"
       },
 
