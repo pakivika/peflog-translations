@@ -1,7 +1,14 @@
 
--- ------------------------ --
--- (c) Pasi Kivikangas 2017 --
--- ------------------------ --
+-- ------------------------
+--
+-- (c) Pasi Kivikangas 2017
+--
+-- Thanks!
+--
+--   Jari Nystedt
+--   Antonio Aloisio
+--
+-- ------------------------
 
 local translations =
   {
