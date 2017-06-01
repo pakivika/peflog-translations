@@ -1,618 +1,749 @@
 
--- ------------------------
 --
 -- (c) Pasi Kivikangas 2017
 --
--- Thanks!
+-- Thanks: Jari Nysteds, Antonio Aloisio
 --
---   Jari Nystedt
---   Antonio Aloisio
---
--- ------------------------
-
-local translations =
-  {
-    ["Hello"] =
-      {
-        ["en"] = "Hello",
-        ["fi"] = "Hei",
-        ["it"] = "Ciao",
-        ["no"] = "Hei"
-      },
-
-    ["pef1.diaglog.title"] =
-      {
-        ["en"] = "PEF1",
-        ["fi"] = "PEF1",
-        ["it"] = "PEF1",
-        ["no"] = "PEF1"
-      },
-
-    ["pef1.dialog.msg"] =
-      {
-        ["en"] = "Save PEF1 results before the medicication.",
-        ["fi"] = "Tallenna PEF1 tulokset ennen lääkkeen ottamista.",
-        ["it"] = "Salva i risultati PEF1 prima del medicazione",
-        ["no"] = "Lagre PEF1-resultater før medisinering."
-      },
-
-    ["pef2.dialog.title"] =
-      {
-        ["en"] = "PEF2",
-        ["fi"] = "PEF2",
-        ["it"] = "PEF2",
-        ["no"] = "PEF2"
-      },
-
-    ["pef2.dialog.msg"] =
-      {
-        ["en"] = "Save PEF2 results 15min after the medication.",
-        ["fi"] = "Tallenna PEF2 tulokset 15min lääkkeen ottamisen jälkeen.",
-        ["it"] = "Salva i risulati PEF2 prima della medicazione.",
-        ["no"] = "Lagre PEF2-resultater 15 minutter etter medisinering."
-      },
-
-    ["pef1.button"] =
-      {
-        ["en"] = "\t\tPEF1\nbefore medication",
-        ["fi"] = "\t\tPEF1\nennen lääkettä",
-        ["it"] = "\t\tPEF1\nprima del medicamento",
-        ["no"] = "\t\tPEF1\nfør medisinering"
-      },
-
-    ["pef2.button"] =
-      {
-        ["en"] = "\t\tPEF2\nafter medication",
-        ["fi"] = "\t\tPEF2\nlääkkeen jälkeen",
-        ["it"] = "\t\tPEF2\ndopo il medicamento",
-        ["no"] = "\t\tPEF2\netter medisinering"
-      },
-
-    ["pef.tab"] =
-      {
-        ["en"] = "PEF",
-        ["fi"] = "PEF",
-        ["it"] = "PEF",
-        ["no"] = "PEF"
-      },
-
-    ["log.tab"] =
-      {
-        ["en"] = "Log",
-        ["fi"] = "Loki",
-        ["it"] = "Log",
-        ["no"] = "Logg"
-      },
-
-    ["report.tab"] =
-      {
-        ["en"] = "Report",
-        ["fi"] = "Raportti",
-        ["it"] = "Report",
-        ["no"] = "Rapport"
-      },
-
-    ["preferences.tab"] =
-      {
-        ["en"] = "My info",
-        ["fi"] = "Tietoni",
-        ["it"] = "Mie Info",
-        ["no"] = "Min informasjon"
-      },
-
-    ["preferences.title.text"] =
-      {
-        ["en"] = "Fill in your details",
-        ["fi"] = "Syötä omat tietosi",
-        ["it"] = "Compila",
-        ["no"] = "Fyll inn personalia"
-      },
-
-    ["pef.tab.datetext"] =
-      {
-        ["en"] = "The date of the PEF results",
-        ["fi"] = "PEF tulosten päivämäärä",
-        ["it"] = "Data del risultato PEF",
-        ["no"] = "PEF dato for resultat"
-      },
-
-    ["pef.tab.peftext"] =
-      {
-        ["en"] = "Three consecutive PEF results",
-        ["fi"] = "Kolme perättäistä PEF tulosta",
-        ["it"] = "Tre risultati PEF consecutivi",
-        ["no"] = "Tre påfølgende PEF-resultater"
-      },
-
-    ["archive.button"] =
-      {
-        ["en"] = "Move log\nto archive",
-        ["fi"] = "Siirrä loki\narkistoon",
-        ["it"] = "Archivia logs",
-        ["no"] = "Arkiver logg"
-      },
-
-    ["archive.delete.button"] =
-      {
-        ["en"] = "Delete\narchive",
-        ["fi"] = "Poista\narkisto",
-        ["it"] = "Cancella\n logs",
-        ["no"] = "Slett logg-arkiv"
-      },
-
-    ["archive.delete.dialog.text"] =
-      {
-        ["en"] = "Hint! You can have all the data to yourself. Add the log to the archive first and restore the archive next and then send the report to yourself before deleting.\n\nDo you really want to delete the archive permanently?",
-        ["fi"] = "Vinkki! Näin säilytät kaikki tiedot itselläsi. Lisää loki ensin arkistoon, palauta sitten arkisto ja lähetä raportti itsellesi ennen poistamista.\n\nHaluatko varmasti poistaa arkiston pysyvästi?",
-        ["it"] = "Suggerimento! ??? ",
-        ["no"] = "Tips! Du kan lagre loggen til arkivet, og gjennopprette arkivet og sende rapporten til deg selv før du sletter."
-      },
-
-    ["archive.dialog.text"] =
-      {
-        ["en"] = "The log will be moved to the archive.\n\nNote! The log can be restored from the archive anytime.",
-        ["fi"] = "Loki siirretään arkistoon.\n\nHuom! Loki voidaan palauttaa arkistosta milloin tahansa. ",
-        ["it"] = "Log archiviato.",
-        ["no"] = "Loggen blir flyttet til arkivet.\n\nMerk! Du kan gjenopprettet loggen fra arkivet når du vil."
-      },
-
-    ["archive.restore.button"] =
-      {
-        ["en"] = "Restore log\nfrom archive",
-        ["fi"] = "Palauta loki\narkistosta",
-        ["it"] = "Recupera log\nda archivio",
-        ["no"] = "Gjennopprett logg\n fra arkivet"
-      },
-
-    ["archive.restore.dialog.text"] =
-      {
-        ["en"] = "The log will be restored from the archive.\n\nNote! The content of the current log will be preserved too.",
-        ["fi"] = "Loki palautetaan arkistosta.\n\nHuom! Lokissa jo olevat tiedot säilyvät myös.",
-        ["it"] = "I log verrann recuperato da archivio.",
-        ["no"] = "Loggen blir gjennopprettet.\n\n Merk! Gjeldende logg blir ikke slettet."
-      },
-
-    ["notify.log.empty"] =
-      {
-        ["en"] = "Log is empty.",
-        ["fi"] = "Loki on tyhjä.",
-        ["it"] = "Non ci sono Log",
-        ["no"] = "Loggen er tom."
-      },
-
-    ["notify.archive.empty"] =
-      {
-        ["en"] = "Archive is empty.",
-        ["fi"] = "Arkisto on tyhjä.",
-        ["it"] = "L'archivio e' vuoto",
-        ["no"] = "Arkivet er tomt."
-      },
-
-    ["send"] =
-      {
-        ["en"] = "Send",
-        ["fi"] = "Lähetä",
-        ["it"] = "Invia",
-        ["no"] = "Send"
-      },
-
-    ["chart.log.button"] =
-      {
-        ["en"] = "\tChart\nfrom log",
-        ["fi"] = "Lokin\nkuvaaja",
-        ["it"] = "????",
-        ["no"] = "Lag graf\nfra logg"
-      },
-
-    ["chart.archive.button"] =
-      {
-        ["en"] = "\tChart\nfrom archive",
-        ["fi"] = "Arkiston\nkuvaaja",
-        ["it"] = "??????????",
-        ["no"] = "Lag graf\nfra arkiv"
-      },
-
-    ["modify.tab.title"] =
-      {
-        ["en"] = "Modify log items",
-        ["fi"] = "Muokkaa lokimerkintöjä",
-        ["it"] = "Modifica records nel log",
-        ["no"] = "Endre loggdata"
-      },
-
-    ["modify.tab.comment"] =
-      {
-        ["en"] = "Comment",
-        ["fi"] = "Kommentti",
-        ["it"] = "Commenta",
-        ["no"] = "Kommentar"
-      },
-
-    ["modify.tab.item"] =
-      {
-        ["en"] = "Modify the log item",
-        ["fi"] = "Muokkaa tätä lokimerkintää",
-        ["it"] = "Modifica record nel log",
-        ["no"] = "Endre loggføring"
-      },
-
-    ["warning.log.item.delete"] =
-      {
-        ["en"] = "Do you really want to delete the log item?",
-        ["fi"] = "Haluatko varmasti poistaa lokimerkinnän?",
-        ["it"] = "Vuoi davvero eliminare il record nel log?",
-        ["no"] = "Vil du virkelig slette loggføring?"
-      },
-
-    ["cancel.button"] =
-      {
-        ["en"] = "Cancel",
-        ["fi"] = "Peru",
-        ["it"] = "Annulla",
-        ["no"] = "Avbryt"
-      },
-
-    ["delete.button"] =
-      {
-        ["en"] = "Delete\nlog item",
-        ["fi"] = "Poista\nmerkintä",
-        ["it"] = "Cancella\nrecord",
-        ["no"] = "Slett\nloggføring"
-      },
-
-    ["email.subject"] =
-      {
-        ["en"] = "PEF results, ",
-        ["fi"] = "PEF tulokset, ",
-        ["it"] = "risultato PEF, ",
-        ["no"] = "PEF-resultater, "
-      },
-
-    ["preferences.name.text"] =
-      {
-        ["en"] = "Name",
-        ["fi"] = "Nimi",
-        ["it"] = "Nome",
-        ["no"] = "Navn"
-      },
-
-    ["preferences.bday.text"] =
-      {
-        ["en"] = "Birthday",
-        ["fi"] = "Syntymäaika",
-        ["it"] = "Giorno di Nascita",
-        ["no"] = "Fødselsdato"
-      },
-
-    ["preferences.height.text"] =
-      {
-        ["en"] = "Height",
-        ["fi"] = "Pituus",
-        ["it"] = "Altezza",
-        ["no"] = "Høyde"
-      },
-
-    ["preferences.weight.text"] =
-      {
-        ["en"] = "Weight",
-        ["fi"] = "Paino",
-        ["it"] = "Peso",
-        ["no"] = "Vekt"
-      },
-
-    ["preferences.email.text"] =
-      {
-        ["en"] = "Send report to this email",
-        ["fi"] = "Raportin vastaanottajan sähköposti",
-        ["it"] = "Invia report a questo indirizzo mail",
-        ["no"] = "Send rapport til epost-mottaker"
-      },
-
-    ["timer.button"] =
-      {
-        ["en"] = "Timer\n15min",
-        ["fi"] = "Ajastin\n15min",
-        ["it"] = "Timer\n15min",
-        ["no"] = "Timer\n15min"
-      },
-
-    ["timer.dialog.text"] =
-      {
-        ["en"] = "15min timer was set",
-        ["fi"] = "15min ajastin on asetettu",
-        ["it"] = "Impostato timer in 15 min",
-        ["no"] = "15min timer er satt"
-      },
-
-    ["notify.15min"] =
-      {
-        ["en"] = "PEFlog 15min!",
-        ["fi"] = "PEFlog 15min!",
-        ["it"] = "PEFlog 15min!",
-        ["no"] = "PEFlog 15min!"
-      },
-
-    ["email.top"] =
-      {
-        ["en"] = "Hi,\n\nHere are the PEF results I have measured.\n\nPEF1 (blue in the graph) is the result before taking the medicine.\nPEF2 (orange in the graph) is the result 15min after taking the medicine.\nDaily variation (blue delta in the graph) is calculated both as percentage and as l/min.\nBronchodilatation response (orange delta in the graph) is calculated both as percentage and as l/min.\nSignificant difference (red delta in the graph).\n\n",
-        ["fi"] = "Hei,\n\nTässä ovat mittaamani PEF tulokset.\n\nPEF1 (kuvaajassa sininen) on tulos ennen lääkkeen ottamista.\nPEF2 (kuvaajassa oranssi) on tulos 15min lääkkeen ottamisen jälkeen.\nPäivittäisvaihtelu (kuvaajassa sininen delta) on laskettu sekä prosentteina että l/min.\nBronkodilataatiovaste (oranssi delta kuvaajassa) on laskettu sekä prosentteina että l/min.\nMerkittävä poikkeama (punainen delta kuvaajassa).\n\n",
-        ["it"] = "Ciao,\n\nEcco i risultati PEF misurati.\n\nPEF1 (blu) e' il risultato prima dell assunzione del medicinale. \n PEF2 (arancio) e' il risultato dopo l assunzione del medicinale.\n La variazione giornaliera (delta blu) e la broncodilatazione (delta arancio) e' calcolata come percentuale e come 1/min.\n In rosso nbel grafico si trova la differenza significativa",
-        ["no"] = "Hei,\n\nHer er mine målte PEF-resultater.\n\nPEF1 (blått på figuren) er resultatet før medisinering.\nPEF2 (oransje) er resultatet 15 minutter etter medisinering.\n Daglig variasjon (blå delta i figuren) er beregnet i prosent og l/m.\nBronkodilatasjonsrespons (oransje delta) er beregnet i prosent og l/min.\nSignifikant differanse (rød delta på figuren).\n\n"
-      },
-
-    ["email.bottom"] =
-      {
-        ["en"] = "\n\nBest regards,\n\n",
-        ["fi"] = "\n\nParhain terveisin,\n\n",
-        ["it"] = "\n\nSaluti,\n\n",
-        ["no"] = "\n\nVennlig hilsen,\n\n"
-      },
-
-    ["email.ps"] =
-      {
-        ["en"] = "\n\nps. This report was automatically created with PEFlog mobile application.\n\n--\nHaliops http://haliops.fi",
-        ["fi"] = "\n\nps. Tämä raportti on automaattisesti tuotettu PEFlog kännykkäsovelluksella.\n\n--\nHaliops http://haliops.fi",
-        ["it"] = "\n\nPS: Questo report e' stato creato automaticante con PEFlog. \n \n -- \nHalops http://haliops.fi",
-        ["no"] = "\n\nPS. Denne rapporten er automatisk generert med PEFlog mobil-app.\n\n--\nHaliops http://haliops.fi"
-      },
-
-    ["email.notify.dialog.title"] =
-      {
-        ["en"] = "Email",
-        ["fi"] = "Email",
-        ["it"] = "Email",
-        ["no"] = "Epost"
-      },
-
-    ["email.notify.text"] =
-      {
-        ["en"] = "The message will be handed over to a system email application.\n\nYou can follow up the sending status from the system email application.",
-        ["fi"] = "Viesti annetaan lähetettäväksi järjestelmän sähköpostisovellukselle.\n\nVoit tarkistaa lähetyksen etenemisen järjestelmän sähköpostisovelluksella.",
-        ["it"] = "Il messaggio sara preso in consegna dal sisteam.",
-        ["no"] = "Denne meldingen blir sendt med din standard epost-leser.\n\nDu kan sjekke status på sendingen i denne."
-      },
-
-    ["report.legend.1"] =
-      {
-        ["en"] = "x = PEF before medication\nDV = Daily variation % and l/min",
-        ["fi"] = "x = PEF ennen lääkettä\nDV = Päivittäisvaihtelu % ja l/min",
-        ["it"] = "x = PEF prima della medicazione\nDV = Variazione giornaliera % e 1/min",
-        ["no"] = "x = PEF før medisinering\nDV = Daglig variasjon % og l/min"
-      },
-
-    ["report.legend.2"] =
-      {
-        ["en"] = "o = PEF after medication\nBV = Bronchodilatation response % and l/min",
-        ["fi"] = "o = PEF lääkkeen jälkeen\nBV = Bronkodilataatiovaste % ja l/min",
-        ["it"] = "o = PEF dopo medicazione\nBV = Broncodilatazione % e 1/min",
-        ["no"] = "o = PEF etter medisinering\nBV = Bronkodilatasjonsrespons % og l/min"
-      },
-
-    ["report.legend.3"] =
-      {
-        ["en"] = "DV = Significant difference",
-        ["fi"] = "DV = Merkittävä poikkeama",
-        ["it"] = "DV = Differenza significativa",
-        ["no"] = "DV = Signifikant forskjell"
-      },
-
-    ["report.legend.4"] =
-      {
-        ["en"] = "Red = Significant difference",
-        ["fi"] = "Punainen = Merkittävä poikkeama",
-        ["it"] = "Rosso = Differenza significativa",
-        ["no"] = "Rød = Signifikant forskjell"
-      },
-
-    ["height"] =
-      {
-        ["en"] = "Height: ",
-        ["fi"] = "Pituus: ",
-        ["it"] = "Altezza",
-        ["no"] = "Høyde:"
-      },
-
-    ["weight"] =
-      {
-        ["en"] = "Weight: ",
-        ["fi"] = "Paino: ",
-        ["it"] = "Peso",
-        ["no"] = "Vekt:"
-      },
-
-    ["notify.dialog.title"] =
-      {
-        ["en"] = "Note!",
-        ["fi"] = "Huomio!",
-        ["it"] = "Nota!",
-        ["no"] = "Merk!"
-      },
-
-    ["warning.dialog.title"] =
-      {
-        ["en"] = "Warning!",
-        ["fi"] = "Varoitus!",
-        ["it"] = "Attenzione!",
-        ["no"] = "Advarsel!"
-      },
-
-    ["myinfo.missing.msg"] =
-      {
-        ["en"] = "Fill your information in the My info -tab before sending.",
-        ["fi"] = "Täytä omat tietosi Tietoni -välilehdellä ennen lähettämistä.",
-        ["it"] = "Compila le informazione in nel tab My info prima di inviare.",
-        ["no"] = "Fyll ut personalia i Min informasjon før sending."
-      },
-
-    ["save.button"] =
-      {
-        ["en"] = "Save",
-        ["fi"] = "Tallenna",
-        ["it"] = "Salva",
-        ["no"] = "Lagre"
-      },
-
-    ["01"] =
-      {
-        ["en"] = "Jan",
-        ["fi"] = "Tammi",
-        ["it"] = "Gen",
-        ["no"] = "Jan"
-      },
-
-    ["02"] =
-      {
-        ["en"] = "Feb",
-        ["fi"] = "Helmi",
-        ["it"] = "Feb",
-        ["no"] = "Feb"
-      },
-
-    ["03"] =
-      {
-        ["en"] = "Mar",
-        ["fi"] = "Maalis",
-        ["it"] = "Mar",
-        ["no"] = "Mar"
-      },
-
-    ["04"] =
-      {
-        ["en"] = "Apr",
-        ["fi"] = "Huhti",
-        ["it"] = "Apr",
-        ["no"] = "Apr"
-      },
-
-    ["05"] =
-      {
-        ["en"] = "May",
-        ["fi"] = "Touko",
-        ["it"] = "Mag",
-        ["no"] = "Mai"
-      },
-
-    ["06"] =
-      {
-        ["en"] = "Jun",
-        ["fi"] = "Kesä",
-        ["it"] = "Giu",
-        ["no"] = "Jun"
-      },
-
-    ["07"] =
-      {
-        ["en"] = "Jul",
-        ["fi"] = "Heinä",
-        ["it"] = "Lug",
-        ["no"] = "Jul"
-      },
-
-    ["08"] =
-      {
-        ["en"] = "Aug",
-        ["fi"] = "Elo",
-        ["it"] = "Ago",
-        ["no"] = "Aug"
-      },
-
-    ["09"] =
-      {
-        ["en"] = "Sep",
-        ["fi"] = "Syys",
-        ["it"] = "Set",
-        ["no"] = "Sep"
-      },
-
-    ["10"] =
-      {
-        ["en"] = "Oct",
-        ["fi"] = "Loka",
-        ["it"] = "Ott",
-        ["no"] = "Okt"
-      },
-
-    ["11"] =
-      {
-        ["en"] = "Nov",
-        ["fi"] = "Marras",
-        ["it"] = "Nov",
-        ["no"] = "Nov"
-      },
-
-    ["12"] =
-      {
-        ["en"] = "Dec",
-        ["fi"] = "Joulu",
-        ["it"] = "Dic",
-        ["no"] = "Des"
-      },
-
-    ["Mon"] =
-      {
-        ["en"] = "Mon",
-        ["fi"] = "Ma",
-        ["it"] = "Lun",
-        ["no"] = "Man"
-      },
-
-    ["Tue"] =
-      {
-        ["en"] = "Tue",
-        ["fi"] = "Ti",
-        ["it"] = "Mat",
-        ["no"] = "Tir"
-      },
-
-    ["Wed"] =
-      {
-        ["en"] = "Wed",
-        ["fi"] = "Ke",
-        ["it"] = "Mer",
-        ["no"] = "Ons"
-      },
-
-    ["Thu"] =
-      {
-        ["en"] = "Thu",
-        ["fi"] = "To",
-        ["it"] = "Gio",
-        ["no"] = "Tor"
-      },
-
-    ["Fri"] =
-      {
-        ["en"] = "Fri",
-        ["fi"] = "Pe",
-        ["it"] = "Ven",
-        ["no"] = "Fre"
-      },
-
-    ["Sat"] =
-      {
-        ["en"] = "Sat",
-        ["fi"] = "La",
-        ["it"] = "Sab",
-        ["no"] = "Lør"
-      },
-
-    ["Sun"] =
-      {
-        ["en"] = "Sun",
-        ["fi"] = "Su",
-        ["it"] = "Dom",
-        ["no"] = "Søn"
-      }
-  }
+
+local translations = {
+  ["Hello"] =
+    {
+      ["en"] = "PEFLog application makes asthma monitoring supereasy and supports you in ensuring asthma is in control and preventing it from getting worse. There are only three simple steps: Blow, Save results and Report",
+      ["fi"] = "PEFLog sovellus tekee astman seurannasta superhelppoa ja auttaa sinua kontrolloimaan astmaa ja estämään sen paheneminen. Monitoroinnissa on kolme yksinkertaista vaihetta: Puhalla, Tallenna tulokset ja Raportti",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["Hello"] =
+    {
+      ["en"] = "Hi",
+      ["fi"] = "Hei",
+      ["it"] = "Ciao",
+      ["zh"] = "???",
+      ["nb"] = "Hei"
+    },
+
+  ["pef1.diaglog.title"] =
+    {
+      ["en"] = "PEF1",
+      ["fi"] = "PEF1",
+      ["it"] = "PEF1",
+      ["zh"] = "???",
+      ["nb"] = "PEF1"
+    },
+
+  ["pef1.dialog.msg"] =
+    {
+      ["en"] = "Save PEF1 results before the medicication.",
+      ["fi"] = "Tallenna PEF1 tulokset ennen lääkkeen ottamista.",
+      ["it"] = "Salva i risultati PEF1-prima del medicazione",
+      ["zh"] = "???",
+      ["nb"] = "Lagre PEF1-resultater før medisinering."
+    },
+
+  ["pef2.dialog.title"] =
+    {
+      ["en"] = "PEF2",
+      ["fi"] = "PEF2",
+      ["it"] = "PEF2",
+      ["zh"] = "???",
+      ["nb"] = "PEF2"
+    },
+
+  ["pef2.dialog.msg"] =
+    {
+      ["en"] = "Save PEF2 results 15min after the medication.",
+      ["fi"] = "Tallenna PEF2 tulokset 15min lääkkeen ottamisen jälkeen.",
+      ["it"] = "Salva i risulati PEF2-prima della medicazione.",
+      ["zh"] = "???",
+      ["nb"] = "Lagre PEF2-resultater 15 minutter etter medisinering."
+    },
+
+  ["pef1.button"] =
+    {
+      ["en"] = "Save PEF1\nbefore medication",
+      ["fi"] = "Tallenna PEF1\nennen lääkettä",
+      ["it"] = "PEF1 prima\ndel medicamento",
+      ["zh"] = "???",
+      ["nb"] = "Lagre PEF1\nfør medisinering"
+    },
+
+  ["pef2.button"] =
+    {
+      ["en"] = "Save PEF2\nafter medication",
+      ["fi"] = "Tallenna PEF2\nlääkkeen jälkeen",
+      ["it"] = "PEF2 dopo\nil medicamento",
+      ["zh"] = "???",
+      ["nb"] = "Lagre PEF2\netter medisinering"
+    },
+
+  ["pef.tab"] =
+    {
+      ["en"] = "PEF",
+      ["fi"] = "PEF",
+      ["it"] = "PEF",
+      ["zh"] = "???",
+      ["nb"] = "PEF"
+    },
+
+  ["log.tab"] =
+    {
+      ["en"] = "Log",
+      ["fi"] = "Loki",
+      ["it"] = "Log",
+      ["zh"] = "???",
+      ["nb"] = "Logg"
+    },
+
+  ["report.tab"] =
+    {
+      ["en"] = "Report",
+      ["fi"] = "Raportti",
+      ["it"] = "Report",
+      ["zh"] = "???",
+      ["nb"] = "Rapport"
+    },
+
+  ["preferences.tab"] =
+    {
+      ["en"] = "My info",
+      ["fi"] = "Tietoni",
+      ["it"] = "Mie Info",
+      ["zh"] = "???",
+      ["nb"] = "Min info"
+    },
+
+  ["preferences.title.text"] =
+    {
+      ["en"] = "Fill in your details",
+      ["fi"] = "Syötä omat tietosi",
+      ["it"] = "Compila",
+      ["zh"] = "???",
+      ["nb"] = "Fyll inn personalia"
+    },
+
+  ["pef.tab.peftext"] =
+    {
+      ["en"] = "Three consecutive PEF-results",
+      ["fi"] = "Kolme perättäistä PEF-tulosta",
+      ["it"] = "Tre risultati PEF-consecutivi",
+      ["zh"] = "???",
+      ["nb"] = "Tre påfølgende PEF-resultater"
+    },
+
+  ["pef.tab.title"] =
+    {
+      ["en"] = "Save PEF-results",
+      ["fi"] = "Tallenna PEF-tulokset",
+      ["it"] = "Salva i risulati PEF",
+      ["zh"] = "???",
+      ["nb"] = "Lagre PEF-resultater"
+    },
+
+  ["new.appversion.dialog.text"] =
+    {
+      ["en"] = "New application version!",
+      ["fi"] = "Uusi ohjelmistoversio!",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["new.appversion.migrate.text"] =
+    {
+      ["en"] = "Archive contains saved data. If you still need that data then restore now.\n\nThis reminder will pop up three times.\n\nRestore now?",
+      ["fi"] = "Arkisto sisältää tallennettuja tietoja. Mikäli haluat käyttää arkiston tietoja, niin palauta tiedot.\n\nTämä muistutus näytetään kolme kertaa.\n\nPalauta nyt?",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["new.appversion.migratefinal.text"] =
+    {
+      ["en"] = "This is the final reminder to restore data from the archive.\n\nRestore now?",
+      ["fi"] = "Tämä on viimeinen muistutus datan palauttamiseksi arkistosta\n\nPalauta nyt?",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["new.logtab.hint"] =
+    {
+      ["en"] = "You can set the start of the monitoring period by double tapping.\n\nPeriods can be hidden by single tapping.\n\nOnly visible periods will appear in the report.",
+      ["fi"] = "Voit merkitä seurantajakson alun tuplaklikkaamalla.\n\nJaksoja voi piilottaa näkyvistä yhdellä klikkauksella.\n\nVain näkyvissä olevat jaksot tulevat raporttiin.",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["notify.archive.empty"] =
+    {
+      ["en"] = "Archive is empty.",
+      ["fi"] = "Arkisto on tyhjä.",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["send"] =
+    {
+      ["en"] = "Send",
+      ["fi"] = "Lähetä",
+      ["it"] = "Invia",
+      ["zh"] = "???",
+      ["nb"] = "Send"
+    },
+
+  ["modify.tab.title"] =
+    {
+      ["en"] = "Modify monitoring periods",
+      ["fi"] = "Muokkaa seurantajaksoja",
+      ["it"] = "Modifica records nel log",
+      ["zh"] = "???",
+      ["nb"] = "Endre loggdata"
+    },
+
+  ["modify.tab.comment"] =
+    {
+      ["en"] = "Comment",
+      ["fi"] = "Kommentti",
+      ["it"] = "Commenta",
+      ["zh"] = "???",
+      ["nb"] = "Kommentar"
+    },
+
+  ["modify.tab.item"] =
+    {
+      ["en"] = "Modify this log item",
+      ["fi"] = "Muokkaa tätä lokimerkintää",
+      ["it"] = "Modifica records nel log",
+      ["zh"] = "???",
+      ["nb"] = "Endre loggdata"
+    },
+
+  ["warning.log.item.delete"] =
+    {
+      ["en"] = "Do you really want to delete this log item?\n\nNote! Other log items are preserved",
+      ["fi"] = "Haluatko varmasti poistaa tämän lokimerkinnän?\n\nHuom! Muita lokimerkintöjä ei poisteta",
+      ["it"] = "Vuoi davvero eliminare il record nel log?",
+      ["zh"] = "???",
+      ["nb"] = "Vil du virkelig slette loggføring?"
+    },
+
+  ["cancel.button"] =
+    {
+      ["en"] = "Cancel",
+      ["fi"] = "Peru",
+      ["it"] = "Annulla",
+      ["zh"] = "???",
+      ["nb"] = "Avbryt"
+    },
+
+  ["delete.button"] =
+    {
+      ["en"] = "Delete\nlog item",
+      ["fi"] = "Poista\nmerkintä",
+      ["it"] = "Cancella\nrecord",
+      ["zh"] = "???",
+      ["nb"] = "Slett\nloggføring"
+    },
+
+  ["email.subject"] =
+    {
+      ["en"] = "PEF-results, ",
+      ["fi"] = "PEF-tulokset, ",
+      ["it"] = "risultato PEF, ",
+      ["zh"] = "???",
+      ["nb"] = "PEF-resultater, "
+    },
+
+  ["preferences.name.text"] =
+    {
+      ["en"] = "Name",
+      ["fi"] = "Nimi",
+      ["it"] = "Nome",
+      ["zh"] = "???",
+      ["nb"] = "Navn"
+    },
+
+  ["preferences.bday.text"] =
+    {
+      ["en"] = "Birthday",
+      ["fi"] = "Syntymäaika",
+      ["it"] = "Giorno di Nascita",
+      ["zh"] = "???",
+      ["nb"] = "Fødselsdato"
+    },
+
+  ["preferences.age.text"] =
+    {
+      ["en"] = "Age (1-120)",
+      ["fi"] = "Ikä (1-120)",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["preferences.height.text"] =
+    {
+      ["en"] = "Height (cm)",
+      ["fi"] = "Pituus (cm)",
+      ["it"] = "Altezza (cm)",
+      ["zh"] = "???",
+      ["nb"] = "Høyde (cm)"
+    },
+
+  ["preferences.weight.text"] =
+    {
+      ["en"] = "Weight (kg)",
+      ["fi"] = "Paino (kg)",
+      ["it"] = "Peso (kg)",
+      ["zh"] = "???",
+      ["nb"] = "Vekt (kg)"
+    },
+
+  ["preferences.gender.text"] =
+    {
+      ["en"] = "Gender",
+      ["fi"] = "Sukupuoli",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["preferences.gender.male"] =
+    {
+      ["en"] = "Male",
+      ["fi"] = "Mies",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["preferences.gender.female"] =
+    {
+      ["en"] = "Female",
+      ["fi"] = "Nainen",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["preferences.email.text"] =
+    {
+      ["en"] = "Send report to this email",
+      ["fi"] = "Raportin vastaanottajan sähköposti",
+      ["it"] = "Invia report a questo indirizzo mail",
+      ["zh"] = "???",
+      ["nb"] = "Send rapport til epost-mottaker"
+    },
+
+  ["timer.button"] =
+    {
+      ["en"] = "Timer\n15min",
+      ["fi"] = "Ajastin\n15min",
+      ["it"] = "Timer\n15min",
+      ["zh"] = "???",
+      ["nb"] = "Timer\n15min"
+    },
+
+  ["timer.dialog.text"] =
+    {
+      ["en"] = "15min timer was set",
+      ["fi"] = "15min ajastin on asetettu",
+      ["it"] = "Impostato timer in 15 min",
+      ["zh"] = "???",
+      ["nb"] = "15min timer er satt"
+    },
+
+  ["notify.15min"] =
+    {
+      ["en"] = "PEFlog 15min!",
+      ["fi"] = "PEFlog 15min!",
+      ["it"] = "PEFlog 15min!",
+      ["zh"] = "???",
+      ["nb"] = "PEFlog 15min!"
+    },
+
+  ["email.top"] =
+    {
+      ["en"] = "Hi,\n\nHere are the PEF-results I have measured.\n\nPEF1 (blue line) is the result before taking the medicine.\nPEF2 (orange bar) is the result after taking the medicine.\nDaily variation (blue bar) and bronchodilatation response (orange bar) are calculated both as percentage and as l/min.\n\n",
+      ["fi"] = "Hei,\n\nTässä ovat mittaamani PEF-tulokset.\n\nPEF1 (sininen viiva) on tulos ennen lääkkeen ottamista.\nPEF2 (oranssi pylväs) on tulos lääkkeen ottamisen jälkeen.\nPäivittäisvaihtelu (sininen pylväs) ja bronkodilataatiovaste (oranssi pylväs) on laskettu sekä prosentteina että l/min.\n\n",
+      ["it"] = "Ciao,\n\nEcco i risultati PEF-misurati.\n\nPEF1 (linea blu) e' il risultato prima dell assunzione del medicinale.\nPEF2 (colonna arancio) e' il risultato dopo l assunzione del medicinale.\nLa variazione giornaliera (colonna blu) e la broncodilatazione (colonna arancio) e' calcolata come percentuale e come l/min.\n\n",
+      ["zh"] = "???",
+      ["nb"] = "Hei,\n\nHer er mine målte PEF-resultater.\n\nPEF1 (blått linje) er resultatet før medisinering.\nPEF2 (oransje kolonne) er resultatet etter medisinering.\nDaglig variasjon (blå kolonne) og bronkodilatasjonsrespons (oransje kolonne) er beregnet i prosent og l/min.\n\n"
+    },
+
+  ["email.bottom"] =
+    {
+      ["en"] = "\n\nBest regards,\n\n",
+      ["fi"] = "\n\nParhain terveisin,\n\n",
+      ["it"] = "\n\nSaluti,\n\n",
+      ["zh"] = "???",
+      ["nb"] = "\n\nVennlig hilsen,\n\n"
+    },
+
+  ["email.ps"] =
+    {
+      ["en"] = "\n\nps. This report was automatically created with PEFlog mobile application.\n\n--\nHaliops http://haliops.fi",
+      ["fi"] = "\n\nps. Tämä raportti on automaattisesti tuotettu PEFlog kännykkäsovelluksella.\n\n--\nHaliops http://haliops.fi",
+      ["it"] = "\n\nPS: Questo report e' stato creato automaticante con PEFlog.\n\n--\nHaliops http://haliops.fi",
+      ["zh"] = "???",
+      ["nb"] = "\n\nPS. Denne rapporten er automatisk generert med PEFlog mobil-app.\n\n--\nHaliops http://haliops.fi"
+    },
+
+  ["email.notify.dialog.title"] =
+    {
+      ["en"] = "Email",
+      ["fi"] = "Email",
+      ["it"] = "Email",
+      ["zh"] = "???",
+      ["nb"] = "Epost"
+    },
+
+  ["email.notify.text"] =
+    {
+      ["en"] = "The message will be handed over to a system email application.\n\nYou can follow up the sending status from the system email application.",
+      ["fi"] = "Viesti annetaan lähetettäväksi järjestelmän sähköpostisovellukselle.\n\nVoit tarkistaa lähetyksen etenemisen järjestelmän sähköpostisovelluksella.",
+      ["it"] = "Il messaggio sara preso in consegna dal sisteam.",
+      ["zh"] = "???",
+      ["nb"] = "Denne meldingen blir sendt med din standard epost-leser.\n\nDu kan sjekke status på sendingen i denne."
+    },
+
+  ["report.legend.daily"] =
+    {
+      ["en"] = "Daily\nvariation",
+      ["fi"] = "Päivittäis-\nvaihtelu",
+      ["it"] = "Giornaliera",
+      ["zh"] = "???",
+      ["nb"] = "Daglig\nvariasjon"
+    },
+
+  ["report.legend.dailyvariation"] =
+    {
+      ["en"] = "Daily variation % and l/min",
+      ["fi"] = "Päivittäisvaihtelu % and l/min",
+      ["it"] = "Variazione giornaliera % e 1/min",
+      ["zh"] = "???",
+      ["nb"] = "Daglig variasjon % og l/min"
+    },
+
+  ["report.legend.1"] =
+    {
+      ["en"] = "Blue = PEF1 before medication",
+      ["fi"] = "Sininen = PEF1 ennen lääkettä",
+      ["it"] = "Blu = PEF1 prima della medicazione",
+      ["zh"] = "???",
+      ["nb"] = "Blått = PEF1 før medisinering"
+    },
+
+  ["report.legend.1.TODO"] =
+    {
+      ["en"] = "Blue = PEF before medication\n%/l = Daily variation %, l/min",
+      ["fi"] = "Sininen = PEF ennen lääkettä\n%/l = Päivittäisvaihtelu %, l/min",
+      ["it"] = "Blu = PEF prima della medicazione\nDV = Variazione giornaliera %, l/min",
+      ["zh"] = "???",
+      ["nb"] = "Blått = PEF før medisinering\nDV = Daglig variasjon %, l/min"
+    },
+
+
+  ["report.legend.2"] =
+    {
+      ["en"] = "Orange = PEF2 after medication",
+      ["fi"] = "Oranssi = PEF2 lääkkeen jälkeen",
+      ["it"] = "Arancio = PEF2 dopo medicazione",
+      ["zh"] = "???",
+      ["nb"] = "Oransje = PEF2 etter medisinering"
+    },
+
+  ["report.legend.2.TODO"] =
+    {
+      ["en"] = "Orange = PEF after medication\n%/l = Bronchodilatation %, l/min",
+      ["fi"] = "Oranssi = PEF lääkkeen jälkeen\n%/l = Bronkodilataatiovaste %, l/min",
+      ["it"] = "Arancio = PEF dopo medicazione\n%/l = Broncodilatazione %, l/min",
+      ["zh"] = "???",
+      ["nb"] = "Oransje = PEF etter medisinering\n%/l = Bronkodilatasjonsrespons %, l/min"
+    },
+
+  ["report.legend.3"] =
+    {
+      ["en"] = "Red = Significant difference",
+      ["fi"] = "Punainen = Merkittävä poikkeama",
+      ["it"] = "Rosso = Differenza significativa",
+      ["zh"] = "???",
+      ["nb"] = "Rød = Signifikant forskjell"
+    },
+
+  ["report.legend.4"] =
+    {
+      ["en"] = "Green = Reference PEF",
+      ["fi"] = "Vihreä = Viite PEF",
+      ["it"] = "??? = ???",
+      ["zh"] = "???",
+      ["nb"] = "??? = ???"
+    },
+
+  ["height"] =
+    {
+      ["en"] = "Height (cm): ",
+      ["fi"] = "Pituus (cm): ",
+      ["it"] = "Altezza (cm): ",
+      ["zh"] = "???",
+      ["nb"] = "Høyde (cm): "
+    },
+
+  ["weight"] =
+    {
+      ["en"] = "Weight (kg): ",
+      ["fi"] = "Paino (kg): ",
+      ["it"] = "Peso (kg): ",
+      ["zh"] = "???",
+      ["nb"] = "Vekt (kg): "
+    },
+
+  ["notify.dialog.title"] =
+    {
+      ["en"] = "Note!",
+      ["fi"] = "Huomio!",
+      ["it"] = "Nota!",
+      ["zh"] = "???",
+      ["nb"] = "Merk!"
+    },
+
+  ["hint.dialog.title"] =
+    {
+      ["en"] = "Tip!",
+      ["fi"] = "Vinkki!",
+      ["it"] = "???",
+      ["zh"] = "???",
+      ["nb"] = "???"
+    },
+
+  ["warning.dialog.title"] =
+    {
+      ["en"] = "Warning!",
+      ["fi"] = "Varoitus!",
+      ["it"] = "Attenzione!",
+      ["zh"] = "???",
+      ["nb"] = "Advarsel!"
+    },
+
+  ["myinfo.missing.msg"] =
+    {
+      ["en"] = "Fill in your name, birthday and recipient email in the My info -tab before sending.",
+      ["fi"] = "Kirjoita nimesi, syntymäaikasi ja vastaanottajan sähköposti Tietoni -välilehdellä ennen lähettämistä.",
+      ["it"] = "Compila le informazione in nel tab My info prima di inviare.",
+      ["zh"] = "???",
+      ["nb"] = "Fyll ut personalia i Min informasjon før sending."
+    },
+
+  ["save.button"] =
+    {
+      ["en"] = "Save",
+      ["fi"] = "Tallenna",
+      ["it"] = "Salva",
+      ["zh"] = "???",
+      ["nb"] = "Lagre"
+    },
+
+  ["back.button"] =
+    {
+      ["en"] = "Back",
+      ["fi"] = "Takaisin",
+      ["it"] = "<",
+      ["zh"] = "???",
+      ["nb"] = "<"
+    },
+
+  ["01"] =
+    {
+      ["en"] = "Jan",
+      ["fi"] = "Tammi",
+      ["it"] = "Gen",
+      ["zh"] = "???",
+      ["nb"] = "Jan"
+    },
+
+  ["02"] =
+    {
+      ["en"] = "Feb",
+      ["fi"] = "Helmi",
+      ["it"] = "Feb",
+      ["zh"] = "???",
+      ["nb"] = "Feb"
+    },
+
+  ["03"] =
+    {
+      ["en"] = "Mar",
+      ["fi"] = "Maalis",
+      ["it"] = "Mar",
+      ["zh"] = "???",
+      ["nb"] = "Mar"
+    },
+
+  ["04"] =
+    {
+      ["en"] = "Apr",
+      ["fi"] = "Huhti",
+      ["it"] = "Apr",
+      ["zh"] = "???",
+      ["nb"] = "Apr"
+    },
+
+  ["05"] =
+    {
+      ["en"] = "May",
+      ["fi"] = "Touko",
+      ["it"] = "Mag",
+      ["zh"] = "???",
+      ["nb"] = "Mai"
+    },
+
+  ["06"] =
+    {
+      ["en"] = "Jun",
+      ["fi"] = "Kesä",
+      ["it"] = "Giu",
+      ["zh"] = "???",
+      ["nb"] = "Jun"
+    },
+
+  ["07"] =
+    {
+      ["en"] = "Jul",
+      ["fi"] = "Heinä",
+      ["it"] = "Lug",
+      ["zh"] = "???",
+      ["nb"] = "Jul"
+    },
+
+  ["08"] =
+    {
+      ["en"] = "Aug",
+      ["fi"] = "Elo",
+      ["it"] = "Ago",
+      ["zh"] = "???",
+      ["nb"] = "Aug"
+    },
+
+  ["09"] =
+    {
+      ["en"] = "Sep",
+      ["fi"] = "Syys",
+      ["it"] = "Set",
+      ["zh"] = "???",
+      ["nb"] = "Sep"
+    },
+
+  ["10"] =
+    {
+      ["en"] = "Oct",
+      ["fi"] = "Loka",
+      ["it"] = "Ott",
+      ["zh"] = "???",
+      ["nb"] = "Okt"
+    },
+
+  ["11"] =
+    {
+      ["en"] = "Nov",
+      ["fi"] = "Marras",
+      ["it"] = "Nov",
+      ["zh"] = "???",
+      ["nb"] = "Nov"
+    },
+
+  ["12"] =
+    {
+      ["en"] = "Dec",
+      ["fi"] = "Joulu",
+      ["it"] = "Dic",
+      ["zh"] = "???",
+      ["nb"] = "Des"
+    },
+
+  ["Mon"] =
+    {
+      ["en"] = "Mon",
+      ["fi"] = "Ma",
+      ["it"] = "Lun",
+      ["zh"] = "???",
+      ["nb"] = "Man"
+    },
+
+  ["Tue"] =
+    {
+      ["en"] = "Tue",
+      ["fi"] = "Ti",
+      ["it"] = "Mat",
+      ["zh"] = "???",
+      ["nb"] = "Tir"
+    },
+
+  ["Wed"] =
+    {
+      ["en"] = "Wed",
+      ["fi"] = "Ke",
+      ["it"] = "Mer",
+      ["zh"] = "???",
+      ["nb"] = "Ons"
+    },
+
+  ["Thu"] =
+    {
+      ["en"] = "Thu",
+      ["fi"] = "To",
+      ["it"] = "Gio",
+      ["zh"] = "???",
+      ["nb"] = "Tor"
+    },
+
+  ["Fri"] =
+    {
+      ["en"] = "Fri",
+      ["fi"] = "Pe",
+      ["it"] = "Ven",
+      ["zh"] = "???",
+      ["nb"] = "Fre"
+    },
+
+  ["Sat"] =
+    {
+      ["en"] = "Sat",
+      ["fi"] = "La",
+      ["it"] = "Sab",
+      ["zh"] = "???",
+      ["nb"] = "Lør"
+    },
+
+  ["Sun"] =
+    {
+      ["en"] = "Sun",
+      ["fi"] = "Su",
+      ["it"] = "Dom",
+      ["zh"] = "???",
+      ["nb"] = "Søn"
+    }
+}
 
 
 --translations["1. save title"][language]
 
 function translations.getLanguage()
   local language = system.getPreference( "locale", "language" )
-  if not language == "en" or not language == "fi" or not language == 'no' then language = "en" end
+  --if not language == "en" or not language == "fi" or not language == "nb" or not language == "it" then language = "en" end
+  if not language == "en" or not language == "fi" or not language == "nb" then language = "en" end
   --return "fi"
   return language
 end
+
+function translations.getWebLanguage()
+  local language = system.getPreference( "locale", "language" )
+  if not language == "en" or not language == "fi" then language = "en" end
+  return language
+end
+
 
 return translations
