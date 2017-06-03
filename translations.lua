@@ -278,8 +278,8 @@ local translations = {
 
   ["preferences.age.text"] =
     {
-      ["en"] = "Age (1-120)",
-      ["fi"] = "Ikä (1-120)",
+      ["en"] = "Age",
+      ["fi"] = "Ikä",
       ["it"] = "???",
       ["zh"] = "???",
       ["nb"] = "???"
@@ -538,6 +538,15 @@ local translations = {
       ["nb"] = "Fyll ut personalia i Min informasjon før sending."
     },
 
+  ["warning.input.number"] =
+  {
+    ["en"] = "Please enter number 1-240",
+    ["fi"] = "Anna numero väliltä 1-240",
+    ["it"] = "Inserire il numero 1-240",
+    ["zh"] = "输入号码 1-240",
+    ["nb"] = "Skriv inn nummeret 1- 240"
+  },
+
   ["save.button"] =
     {
       ["en"] = "Save",
@@ -734,7 +743,7 @@ local translations = {
 function translations.getLanguage()
   local language = system.getPreference( "locale", "language" )
   --if not language == "en" or not language == "fi" or not language == "nb" or not language == "it" then language = "en" end
-  if not language == "en" or not language == "fi" or not language == "nb" then language = "en" end
+  if not language == "en" or not language == "fi" then language = "en" end
   --return "fi"
   return language
 end
