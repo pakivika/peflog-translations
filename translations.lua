@@ -11,7 +11,7 @@ local translations = {
       ["en"] = "PEFLog application makes asthma monitoring supereasy and supports you in ensuring asthma is in control and preventing it from getting worse. There are only three simple steps: Blow, Save results and Report",
       ["fi"] = "PEFLog sovellus tekee astman seurannasta superhelppoa ja auttaa sinua kontrolloimaan astmaa ja estämään sen paheneminen. Monitoroinnissa on kolme yksinkertaista vaihetta: Puhalla, Tallenna tulokset ja Raportti",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "PEFLog应用使得哮喘的监控变得超级简单，控制你的哮喘不会恶化。只有三个简单的步骤：吹气，存储结果及报告",
       ["nb"] = "???"
     },
 
@@ -20,7 +20,7 @@ local translations = {
       ["en"] = "Hi",
       ["fi"] = "Hei",
       ["it"] = "Ciao",
-      ["zh"] = "???",
+      ["zh"] = "你好",
       ["nb"] = "Hei"
     },
 
@@ -29,7 +29,7 @@ local translations = {
       ["en"] = "PEF1",
       ["fi"] = "PEF1",
       ["it"] = "PEF1",
-      ["zh"] = "???",
+      ["zh"] = "PEF1",
       ["nb"] = "PEF1"
     },
 
@@ -38,7 +38,7 @@ local translations = {
       ["en"] = "Save PEF1 results before the medicication.",
       ["fi"] = "Tallenna PEF1 tulokset ennen lääkkeen ottamista.",
       ["it"] = "Salva i risultati PEF1-prima del medicazione",
-      ["zh"] = "???",
+      ["zh"] = "药物治疗前存储PEF1结果",
       ["nb"] = "Lagre PEF1-resultater før medisinering."
     },
 
@@ -47,7 +47,7 @@ local translations = {
       ["en"] = "PEF2",
       ["fi"] = "PEF2",
       ["it"] = "PEF2",
-      ["zh"] = "???",
+      ["zh"] = "PEF2",
       ["nb"] = "PEF2"
     },
 
@@ -56,7 +56,7 @@ local translations = {
       ["en"] = "Save PEF2 results 15min after the medication.",
       ["fi"] = "Tallenna PEF2 tulokset 15min lääkkeen ottamisen jälkeen.",
       ["it"] = "Salva i risulati PEF2-prima della medicazione.",
-      ["zh"] = "???",
+      ["zh"] = "药物治疗15分钟后存储PEF2结果",
       ["nb"] = "Lagre PEF2-resultater 15 minutter etter medisinering."
     },
 
@@ -65,7 +65,7 @@ local translations = {
       ["en"] = "Save PEF1\nbefore medication",
       ["fi"] = "Tallenna PEF1\nennen lääkettä",
       ["it"] = "PEF1 prima\ndel medicamento",
-      ["zh"] = "???",
+      ["zh"] = "药物治疗前\n存储PEF1",
       ["nb"] = "Lagre PEF1\nfør medisinering"
     },
 
@@ -74,7 +74,7 @@ local translations = {
       ["en"] = "Save PEF2\nafter medication",
       ["fi"] = "Tallenna PEF2\nlääkkeen jälkeen",
       ["it"] = "PEF2 dopo\nil medicamento",
-      ["zh"] = "???",
+      ["zh"] = "药物治疗后\n存储PEF2",
       ["nb"] = "Lagre PEF2\netter medisinering"
     },
 
@@ -83,7 +83,7 @@ local translations = {
       ["en"] = "PEF",
       ["fi"] = "PEF",
       ["it"] = "PEF",
-      ["zh"] = "???",
+      ["zh"] = "PEF",
       ["nb"] = "PEF"
     },
 
@@ -92,7 +92,7 @@ local translations = {
       ["en"] = "Log",
       ["fi"] = "Loki",
       ["it"] = "Log",
-      ["zh"] = "???",
+      ["zh"] = "日志",
       ["nb"] = "Logg"
     },
 
@@ -101,7 +101,7 @@ local translations = {
       ["en"] = "Report",
       ["fi"] = "Raportti",
       ["it"] = "Report",
-      ["zh"] = "???",
+      ["zh"] = "报告",
       ["nb"] = "Rapport"
     },
 
@@ -110,7 +110,7 @@ local translations = {
       ["en"] = "My info",
       ["fi"] = "Tietoni",
       ["it"] = "Mie Info",
-      ["zh"] = "???",
+      ["zh"] = "个人信息",
       ["nb"] = "Min info"
     },
 
@@ -119,7 +119,7 @@ local translations = {
       ["en"] = "Fill in your details",
       ["fi"] = "Syötä omat tietosi",
       ["it"] = "Compila",
-      ["zh"] = "???",
+      ["zh"] = "填写个人信息",
       ["nb"] = "Fyll inn personalia"
     },
 
@@ -128,7 +128,7 @@ local translations = {
       ["en"] = "Three consecutive PEF-results",
       ["fi"] = "Kolme perättäistä PEF-tulosta",
       ["it"] = "Tre risultati PEF-consecutivi",
-      ["zh"] = "???",
+      ["zh"] = "连续三次PEF结果",
       ["nb"] = "Tre påfølgende PEF-resultater"
     },
 
@@ -137,7 +137,7 @@ local translations = {
       ["en"] = "Save PEF-results",
       ["fi"] = "Tallenna PEF-tulokset",
       ["it"] = "Salva i risulati PEF",
-      ["zh"] = "???",
+      ["zh"] = "存储PEF结果",
       ["nb"] = "Lagre PEF-resultater"
     },
 
@@ -146,7 +146,7 @@ local translations = {
       ["en"] = "New application version!",
       ["fi"] = "Uusi ohjelmistoversio!",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "新应用版本！",
       ["nb"] = "???"
     },
 
@@ -155,7 +155,7 @@ local translations = {
       ["en"] = "Archive contains saved data. If you still need that data then restore now.\n\nThis reminder will pop up three times.\n\nRestore now?",
       ["fi"] = "Arkisto sisältää tallennettuja tietoja. Mikäli haluat käyttää arkiston tietoja, niin palauta tiedot.\n\nTämä muistutus näytetään kolme kertaa.\n\nPalauta nyt?",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "档案保留存储结果。如果你还需要这些数据，可以现在恢复。\n\n这一提醒会显示三次。\n\n现在恢复？",
       ["nb"] = "???"
     },
 
@@ -164,7 +164,7 @@ local translations = {
       ["en"] = "This is the final reminder to restore data from the archive.\n\nRestore now?",
       ["fi"] = "Tämä on viimeinen muistutus datan palauttamiseksi arkistosta\n\nPalauta nyt?",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "这是最后一次提醒从档案中恢复数据。\n\n现在恢复？",
       ["nb"] = "???"
     },
 
@@ -173,7 +173,7 @@ local translations = {
       ["en"] = "You can set the start of the monitoring period by double tapping.\n\nPeriods can be hidden by single tapping.\n\nOnly visible periods will appear in the report.",
       ["fi"] = "Voit merkitä seurantajakson alun tuplaklikkaamalla.\n\nJaksoja voi piilottaa näkyvistä yhdellä klikkauksella.\n\nVain näkyvissä olevat jaksot tulevat raporttiin.",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "你可以通过双击设置监控时期的起始时间。\n\n单击可以隐藏时期。\n\n只有可见的时期会出现在报告上。",
       ["nb"] = "???"
     },
 
@@ -182,7 +182,7 @@ local translations = {
       ["en"] = "Archive is empty.",
       ["fi"] = "Arkisto on tyhjä.",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "存档为空",
       ["nb"] = "???"
     },
 
@@ -191,7 +191,7 @@ local translations = {
       ["en"] = "Send",
       ["fi"] = "Lähetä",
       ["it"] = "Invia",
-      ["zh"] = "???",
+      ["zh"] = "发送",
       ["nb"] = "Send"
     },
 
@@ -200,7 +200,7 @@ local translations = {
       ["en"] = "Modify monitoring periods",
       ["fi"] = "Muokkaa seurantajaksoja",
       ["it"] = "Modifica records nel log",
-      ["zh"] = "???",
+      ["zh"] = "修改监控时期",
       ["nb"] = "Endre loggdata"
     },
 
@@ -209,7 +209,7 @@ local translations = {
       ["en"] = "Comment",
       ["fi"] = "Kommentti",
       ["it"] = "Commenta",
-      ["zh"] = "???",
+      ["zh"] = "评论",
       ["nb"] = "Kommentar"
     },
 
@@ -218,7 +218,7 @@ local translations = {
       ["en"] = "Modify this log item",
       ["fi"] = "Muokkaa tätä lokimerkintää",
       ["it"] = "Modifica records nel log",
-      ["zh"] = "???",
+      ["zh"] = "更改日志条目",
       ["nb"] = "Endre loggdata"
     },
 
@@ -227,7 +227,7 @@ local translations = {
       ["en"] = "Do you really want to delete this log item?\n\nNote! Other log items are preserved",
       ["fi"] = "Haluatko varmasti poistaa tämän lokimerkinnän?\n\nHuom! Muita lokimerkintöjä ei poisteta",
       ["it"] = "Vuoi davvero eliminare il record nel log?",
-      ["zh"] = "???",
+      ["zh"] = "确定删除日志条目吗？\n\n说明！其它日志条目将被保留",
       ["nb"] = "Vil du virkelig slette loggføring?"
     },
 
@@ -236,7 +236,7 @@ local translations = {
       ["en"] = "Cancel",
       ["fi"] = "Peru",
       ["it"] = "Annulla",
-      ["zh"] = "???",
+      ["zh"] = "取消",
       ["nb"] = "Avbryt"
     },
 
@@ -245,7 +245,7 @@ local translations = {
       ["en"] = "Delete\nlog item",
       ["fi"] = "Poista\nmerkintä",
       ["it"] = "Cancella\nrecord",
-      ["zh"] = "???",
+      ["zh"] = "删除\n日志条目",
       ["nb"] = "Slett\nloggføring"
     },
 
@@ -254,7 +254,7 @@ local translations = {
       ["en"] = "PEF-results, ",
       ["fi"] = "PEF-tulokset, ",
       ["it"] = "risultato PEF, ",
-      ["zh"] = "???",
+      ["zh"] = "PEF结果",
       ["nb"] = "PEF-resultater, "
     },
 
@@ -263,7 +263,7 @@ local translations = {
       ["en"] = "Name",
       ["fi"] = "Nimi",
       ["it"] = "Nome",
-      ["zh"] = "???",
+      ["zh"] = "姓名",
       ["nb"] = "Navn"
     },
 
@@ -272,7 +272,7 @@ local translations = {
       ["en"] = "Birthday",
       ["fi"] = "Syntymäaika",
       ["it"] = "Giorno di Nascita",
-      ["zh"] = "???",
+      ["zh"] = "生日",
       ["nb"] = "Fødselsdato"
     },
 
@@ -281,7 +281,7 @@ local translations = {
       ["en"] = "Age",
       ["fi"] = "Ikä",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "年龄",
       ["nb"] = "???"
     },
 
@@ -290,7 +290,7 @@ local translations = {
       ["en"] = "Height (cm)",
       ["fi"] = "Pituus (cm)",
       ["it"] = "Altezza (cm)",
-      ["zh"] = "???",
+      ["zh"] = "身高（厘米）",
       ["nb"] = "Høyde (cm)"
     },
 
@@ -299,7 +299,7 @@ local translations = {
       ["en"] = "Weight (kg)",
       ["fi"] = "Paino (kg)",
       ["it"] = "Peso (kg)",
-      ["zh"] = "???",
+      ["zh"] = "重量（公斤）",
       ["nb"] = "Vekt (kg)"
     },
 
@@ -308,7 +308,7 @@ local translations = {
       ["en"] = "Gender",
       ["fi"] = "Sukupuoli",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "性别",
       ["nb"] = "???"
     },
 
@@ -317,7 +317,7 @@ local translations = {
       ["en"] = "Male",
       ["fi"] = "Mies",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "男",
       ["nb"] = "???"
     },
 
@@ -326,7 +326,7 @@ local translations = {
       ["en"] = "Female",
       ["fi"] = "Nainen",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "女",
       ["nb"] = "???"
     },
 
@@ -335,7 +335,7 @@ local translations = {
       ["en"] = "Send report to this email",
       ["fi"] = "Raportin vastaanottajan sähköposti",
       ["it"] = "Invia report a questo indirizzo mail",
-      ["zh"] = "???",
+      ["zh"] = "发送报告到这个邮箱",
       ["nb"] = "Send rapport til epost-mottaker"
     },
 
@@ -344,7 +344,7 @@ local translations = {
       ["en"] = "Timer\n15min",
       ["fi"] = "Ajastin\n15min",
       ["it"] = "Timer\n15min",
-      ["zh"] = "???",
+      ["zh"] = "计时器\n15分钟",
       ["nb"] = "Timer\n15min"
     },
 
@@ -353,7 +353,7 @@ local translations = {
       ["en"] = "15min timer was set",
       ["fi"] = "15min ajastin on asetettu",
       ["it"] = "Impostato timer in 15 min",
-      ["zh"] = "???",
+      ["zh"] = "15分钟计时器已设置",
       ["nb"] = "15min timer er satt"
     },
 
@@ -362,7 +362,7 @@ local translations = {
       ["en"] = "PEFlog 15min!",
       ["fi"] = "PEFlog 15min!",
       ["it"] = "PEFlog 15min!",
-      ["zh"] = "???",
+      ["zh"] = "PEFLog 15分钟！",
       ["nb"] = "PEFlog 15min!"
     },
 
@@ -371,7 +371,7 @@ local translations = {
       ["en"] = "Hi,\n\nHere are the PEF-results I have measured.\n\nPEF1 (blue line) is the result before taking the medicine.\nPEF2 (orange bar) is the result after taking the medicine.\nDaily variation (blue bar) and bronchodilatation response (orange bar) are calculated both as percentage and as l/min.\n\n",
       ["fi"] = "Hei,\n\nTässä ovat mittaamani PEF-tulokset.\n\nPEF1 (sininen viiva) on tulos ennen lääkkeen ottamista.\nPEF2 (oranssi pylväs) on tulos lääkkeen ottamisen jälkeen.\nPäivittäisvaihtelu (sininen pylväs) ja bronkodilataatiovaste (oranssi pylväs) on laskettu sekä prosentteina että l/min.\n\n",
       ["it"] = "Ciao,\n\nEcco i risultati PEF-misurati.\n\nPEF1 (linea blu) e' il risultato prima dell assunzione del medicinale.\nPEF2 (colonna arancio) e' il risultato dopo l assunzione del medicinale.\nLa variazione giornaliera (colonna blu) e la broncodilatazione (colonna arancio) e' calcolata come percentuale e come l/min.\n\n",
-      ["zh"] = "???",
+      ["zh"] = "你好，\n\n这是测量的PEF结果。 \n\nPEF1（蓝色线）是服药前的结果。\nPEF2（橙色线）是服药后结果。\n每日变动（蓝色条）和支气管扩张反应（橙色条）根据百分比和 l/min计算得出。\n\n",
       ["nb"] = "Hei,\n\nHer er mine målte PEF-resultater.\n\nPEF1 (blått linje) er resultatet før medisinering.\nPEF2 (oransje kolonne) er resultatet etter medisinering.\nDaglig variasjon (blå kolonne) og bronkodilatasjonsrespons (oransje kolonne) er beregnet i prosent og l/min.\n\n"
     },
 
@@ -380,7 +380,7 @@ local translations = {
       ["en"] = "\n\nBest regards,\n\n",
       ["fi"] = "\n\nParhain terveisin,\n\n",
       ["it"] = "\n\nSaluti,\n\n",
-      ["zh"] = "???",
+      ["zh"] = "\n\n致敬，\n\n",
       ["nb"] = "\n\nVennlig hilsen,\n\n"
     },
 
@@ -389,7 +389,7 @@ local translations = {
       ["en"] = "\n\nps. This report was automatically created with PEFlog mobile application.\n\n--\nHaliops http://haliops.fi",
       ["fi"] = "\n\nps. Tämä raportti on automaattisesti tuotettu PEFlog kännykkäsovelluksella.\n\n--\nHaliops http://haliops.fi",
       ["it"] = "\n\nPS: Questo report e' stato creato automaticante con PEFlog.\n\n--\nHaliops http://haliops.fi",
-      ["zh"] = "???",
+      ["zh"] = "\n\n附注：这个报告由PEFlog应用自动生成。\n\n--\nHaliops http://haliops.fi",
       ["nb"] = "\n\nPS. Denne rapporten er automatisk generert med PEFlog mobil-app.\n\n--\nHaliops http://haliops.fi"
     },
 
@@ -398,7 +398,7 @@ local translations = {
       ["en"] = "Email",
       ["fi"] = "Email",
       ["it"] = "Email",
-      ["zh"] = "???",
+      ["zh"] = "邮箱",
       ["nb"] = "Epost"
     },
 
@@ -407,7 +407,7 @@ local translations = {
       ["en"] = "The message will be handed over to a system email application.\n\nYou can follow up the sending status from the system email application.",
       ["fi"] = "Viesti annetaan lähetettäväksi järjestelmän sähköpostisovellukselle.\n\nVoit tarkistaa lähetyksen etenemisen järjestelmän sähköpostisovelluksella.",
       ["it"] = "Il messaggio sara preso in consegna dal sisteam.",
-      ["zh"] = "???",
+      ["zh"] = "这一信息将交给系统邮件应用。\n\n你可以从系统邮件应用查看发送状态",
       ["nb"] = "Denne meldingen blir sendt med din standard epost-leser.\n\nDu kan sjekke status på sendingen i denne."
     },
 
@@ -416,7 +416,7 @@ local translations = {
       ["en"] = "Daily\nvariation",
       ["fi"] = "Päivittäis-\nvaihtelu",
       ["it"] = "Giornaliera",
-      ["zh"] = "???",
+      ["zh"] = "每日\n变动",
       ["nb"] = "Daglig\nvariasjon"
     },
 
@@ -425,7 +425,7 @@ local translations = {
       ["en"] = "Daily variation % and l/min",
       ["fi"] = "Päivittäisvaihtelu % and l/min",
       ["it"] = "Variazione giornaliera % e 1/min",
-      ["zh"] = "???",
+      ["zh"] = "每日变动 % 及 l/min",
       ["nb"] = "Daglig variasjon % og l/min"
     },
 
@@ -434,7 +434,7 @@ local translations = {
       ["en"] = "Blue = PEF1 before medication",
       ["fi"] = "Sininen = PEF1 ennen lääkettä",
       ["it"] = "Blu = PEF1 prima della medicazione",
-      ["zh"] = "???",
+      ["zh"] = "蓝色 = 医务治疗前PEF1",
       ["nb"] = "Blått = PEF1 før medisinering"
     },
 
@@ -443,7 +443,7 @@ local translations = {
       ["en"] = "Blue = PEF before medication\n%/l = Daily variation %, l/min",
       ["fi"] = "Sininen = PEF ennen lääkettä\n%/l = Päivittäisvaihtelu %, l/min",
       ["it"] = "Blu = PEF prima della medicazione\nDV = Variazione giornaliera %, l/min",
-      ["zh"] = "???",
+      ["zh"] = "蓝色 = 医务治疗前PEF\n%/l = 每日变动 %, l/min"",
       ["nb"] = "Blått = PEF før medisinering\nDV = Daglig variasjon %, l/min"
     },
 
@@ -453,7 +453,7 @@ local translations = {
       ["en"] = "Orange = PEF2 after medication",
       ["fi"] = "Oranssi = PEF2 lääkkeen jälkeen",
       ["it"] = "Arancio = PEF2 dopo medicazione",
-      ["zh"] = "???",
+      ["zh"] = "橙色 = 医务治疗后PEF2",
       ["nb"] = "Oransje = PEF2 etter medisinering"
     },
 
@@ -462,7 +462,7 @@ local translations = {
       ["en"] = "Orange = PEF after medication\n%/l = Bronchodilatation %, l/min",
       ["fi"] = "Oranssi = PEF lääkkeen jälkeen\n%/l = Bronkodilataatiovaste %, l/min",
       ["it"] = "Arancio = PEF dopo medicazione\n%/l = Broncodilatazione %, l/min",
-      ["zh"] = "???",
+      ["zh"] = "橙色 = 医务治疗后PEF\n%/l = 支气管扩张 %, l/min",
       ["nb"] = "Oransje = PEF etter medisinering\n%/l = Bronkodilatasjonsrespons %, l/min"
     },
 
@@ -471,7 +471,7 @@ local translations = {
       ["en"] = "Red = Significant difference",
       ["fi"] = "Punainen = Merkittävä poikkeama",
       ["it"] = "Rosso = Differenza significativa",
-      ["zh"] = "???",
+      ["zh"] = "红色 = 显著区别",
       ["nb"] = "Rød = Signifikant forskjell"
     },
 
@@ -480,7 +480,7 @@ local translations = {
       ["en"] = "Green = Reference PEF",
       ["fi"] = "Vihreä = Viite PEF",
       ["it"] = "??? = ???",
-      ["zh"] = "???",
+      ["zh"] = "绿色 = 参考PEF",
       ["nb"] = "??? = ???"
     },
 
@@ -489,7 +489,7 @@ local translations = {
       ["en"] = "Height (cm): ",
       ["fi"] = "Pituus (cm): ",
       ["it"] = "Altezza (cm): ",
-      ["zh"] = "???",
+      ["zh"] = "身高（厘米）",
       ["nb"] = "Høyde (cm): "
     },
 
@@ -498,7 +498,7 @@ local translations = {
       ["en"] = "Weight (kg): ",
       ["fi"] = "Paino (kg): ",
       ["it"] = "Peso (kg): ",
-      ["zh"] = "???",
+      ["zh"] = "重量（公斤）",
       ["nb"] = "Vekt (kg): "
     },
 
@@ -507,7 +507,7 @@ local translations = {
       ["en"] = "Note!",
       ["fi"] = "Huomio!",
       ["it"] = "Nota!",
-      ["zh"] = "???",
+      ["zh"] = "说明！",
       ["nb"] = "Merk!"
     },
 
@@ -516,7 +516,7 @@ local translations = {
       ["en"] = "Tip!",
       ["fi"] = "Vinkki!",
       ["it"] = "???",
-      ["zh"] = "???",
+      ["zh"] = "提示",
       ["nb"] = "???"
     },
 
@@ -525,7 +525,7 @@ local translations = {
       ["en"] = "Warning!",
       ["fi"] = "Varoitus!",
       ["it"] = "Attenzione!",
-      ["zh"] = "???",
+      ["zh"] = "提醒",
       ["nb"] = "Advarsel!"
     },
 
@@ -534,7 +534,7 @@ local translations = {
       ["en"] = "Fill in your name, birthday and recipient email in the My info -tab before sending.",
       ["fi"] = "Kirjoita nimesi, syntymäaikasi ja vastaanottajan sähköposti Tietoni -välilehdellä ennen lähettämistä.",
       ["it"] = "Compila le informazione in nel tab My info prima di inviare.",
-      ["zh"] = "???",
+      ["zh"] = "发送前在个人信息栏填写姓名，生日和邮箱",
       ["nb"] = "Fyll ut personalia i Min informasjon før sending."
     },
 
@@ -552,7 +552,7 @@ local translations = {
       ["en"] = "Save",
       ["fi"] = "Tallenna",
       ["it"] = "Salva",
-      ["zh"] = "???",
+      ["zh"] = "存储",
       ["nb"] = "Lagre"
     },
 
@@ -561,7 +561,7 @@ local translations = {
       ["en"] = "Back",
       ["fi"] = "Takaisin",
       ["it"] = "<",
-      ["zh"] = "???",
+      ["zh"] = "返回",
       ["nb"] = "<"
     },
 
@@ -570,7 +570,7 @@ local translations = {
       ["en"] = "Jan",
       ["fi"] = "Tammi",
       ["it"] = "Gen",
-      ["zh"] = "???",
+      ["zh"] = "1月",
       ["nb"] = "Jan"
     },
 
@@ -579,7 +579,7 @@ local translations = {
       ["en"] = "Feb",
       ["fi"] = "Helmi",
       ["it"] = "Feb",
-      ["zh"] = "???",
+      ["zh"] = "2月",
       ["nb"] = "Feb"
     },
 
@@ -588,7 +588,7 @@ local translations = {
       ["en"] = "Mar",
       ["fi"] = "Maalis",
       ["it"] = "Mar",
-      ["zh"] = "???",
+      ["zh"] = "3月",
       ["nb"] = "Mar"
     },
 
@@ -597,7 +597,7 @@ local translations = {
       ["en"] = "Apr",
       ["fi"] = "Huhti",
       ["it"] = "Apr",
-      ["zh"] = "???",
+      ["zh"] = "4月",
       ["nb"] = "Apr"
     },
 
@@ -606,7 +606,7 @@ local translations = {
       ["en"] = "May",
       ["fi"] = "Touko",
       ["it"] = "Mag",
-      ["zh"] = "???",
+      ["zh"] = "5月",
       ["nb"] = "Mai"
     },
 
@@ -615,7 +615,7 @@ local translations = {
       ["en"] = "Jun",
       ["fi"] = "Kesä",
       ["it"] = "Giu",
-      ["zh"] = "???",
+      ["zh"] = "6月",
       ["nb"] = "Jun"
     },
 
@@ -624,7 +624,7 @@ local translations = {
       ["en"] = "Jul",
       ["fi"] = "Heinä",
       ["it"] = "Lug",
-      ["zh"] = "???",
+      ["zh"] = "7月",
       ["nb"] = "Jul"
     },
 
@@ -633,7 +633,7 @@ local translations = {
       ["en"] = "Aug",
       ["fi"] = "Elo",
       ["it"] = "Ago",
-      ["zh"] = "???",
+      ["zh"] = "8月",
       ["nb"] = "Aug"
     },
 
@@ -642,7 +642,7 @@ local translations = {
       ["en"] = "Sep",
       ["fi"] = "Syys",
       ["it"] = "Set",
-      ["zh"] = "???",
+      ["zh"] = "9月",
       ["nb"] = "Sep"
     },
 
@@ -651,7 +651,7 @@ local translations = {
       ["en"] = "Oct",
       ["fi"] = "Loka",
       ["it"] = "Ott",
-      ["zh"] = "???",
+      ["zh"] = "10月",
       ["nb"] = "Okt"
     },
 
@@ -660,7 +660,7 @@ local translations = {
       ["en"] = "Nov",
       ["fi"] = "Marras",
       ["it"] = "Nov",
-      ["zh"] = "???",
+      ["zh"] = "11月",
       ["nb"] = "Nov"
     },
 
@@ -669,7 +669,7 @@ local translations = {
       ["en"] = "Dec",
       ["fi"] = "Joulu",
       ["it"] = "Dic",
-      ["zh"] = "???",
+      ["zh"] = "12月",
       ["nb"] = "Des"
     },
 
@@ -678,7 +678,7 @@ local translations = {
       ["en"] = "Mon",
       ["fi"] = "Ma",
       ["it"] = "Lun",
-      ["zh"] = "???",
+      ["zh"] = "周一",
       ["nb"] = "Man"
     },
 
@@ -687,7 +687,7 @@ local translations = {
       ["en"] = "Tue",
       ["fi"] = "Ti",
       ["it"] = "Mat",
-      ["zh"] = "???",
+      ["zh"] = "周二",
       ["nb"] = "Tir"
     },
 
@@ -696,7 +696,7 @@ local translations = {
       ["en"] = "Wed",
       ["fi"] = "Ke",
       ["it"] = "Mer",
-      ["zh"] = "???",
+      ["zh"] = "周三",
       ["nb"] = "Ons"
     },
 
@@ -705,7 +705,7 @@ local translations = {
       ["en"] = "Thu",
       ["fi"] = "To",
       ["it"] = "Gio",
-      ["zh"] = "???",
+      ["zh"] = "周四",
       ["nb"] = "Tor"
     },
 
@@ -714,7 +714,7 @@ local translations = {
       ["en"] = "Fri",
       ["fi"] = "Pe",
       ["it"] = "Ven",
-      ["zh"] = "???",
+      ["zh"] = "周五",
       ["nb"] = "Fre"
     },
 
@@ -723,7 +723,7 @@ local translations = {
       ["en"] = "Sat",
       ["fi"] = "La",
       ["it"] = "Sab",
-      ["zh"] = "???",
+      ["zh"] = "周六",
       ["nb"] = "Lør"
     },
 
@@ -732,7 +732,7 @@ local translations = {
       ["en"] = "Sun",
       ["fi"] = "Su",
       ["it"] = "Dom",
-      ["zh"] = "???",
+      ["zh"] = "周日",
       ["nb"] = "Søn"
     }
 }
