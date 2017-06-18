@@ -2,7 +2,7 @@
 --
 -- (c) Pasi Kivikangas 2017
 --
--- Thanks: Jari Nysteds, Antonio Aloisio
+-- Thanks: Jari Nysteds, Antonio Aloisio, Peng Zhang
 --
 
 local translations = {
@@ -443,7 +443,7 @@ local translations = {
       ["en"] = "Blue = PEF before medication\n%/l = Daily variation %, l/min",
       ["fi"] = "Sininen = PEF ennen lääkettä\n%/l = Päivittäisvaihtelu %, l/min",
       ["it"] = "Blu = PEF prima della medicazione\nDV = Variazione giornaliera %, l/min",
-      ["zh"] = "蓝色 = 医务治疗前PEF\n%/l = 每日变动 %, l/min"",
+      ["zh"] = "蓝色 = 医务治疗前PEF\n%/l = 每日变动 %, l/min",
       ["nb"] = "Blått = PEF før medisinering\nDV = Daglig variasjon %, l/min"
     },
 
@@ -743,7 +743,7 @@ local translations = {
 function translations.getLanguage()
   local language = system.getPreference( "locale", "language" )
   --if not language == "en" or not language == "fi" or not language == "nb" or not language == "it" then language = "en" end
-  if not language == "en" or not language == "fi" then language = "en" end
+  if not language == "en" or not language == "fi" or not language == "zh" then language = "en" end
   --return "fi"
   return language
 end
