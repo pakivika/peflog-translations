@@ -743,15 +743,21 @@ local translations = {
 function translations.getLanguage()
   local language = system.getPreference( "locale", "language" )
   --if not language == "en" or not language == "fi" or not language == "nb" or not language == "it" then language = "en" end
-  if not language == "en" or not language == "fi" or not language == "zh" then language = "en" end
-  --return "fi"
-  return language
+  if language == "en" or language == "fi" or language == "zh" then 
+    return language
+    --return "fi"
+  else
+    return "en"
+  end
 end
 
 function translations.getWebLanguage()
   local language = system.getPreference( "locale", "language" )
-  if not language == "en" or not language == "fi" then language = "en" end
-  return language
+  if language == "en" or language == "fi" then 
+    return language
+  else
+    return "en"
+  end
 end
 
 
