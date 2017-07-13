@@ -12,7 +12,7 @@ local translations = {
       ["fi"] = "PEFLog sovellus tekee astman seurannasta superhelppoa ja auttaa sinua kontrolloimaan astmaa ja estämään sen paheneminen. Monitoroinnissa on kolme yksinkertaista vaihetta: Puhalla, Tallenna tulokset ja Raportti",
       ["it"] = "???",
       ["zh"] = "PEFLog应用使得哮喘的监控变得超级简单，控制你的哮喘不会恶化。只有三个简单的步骤：吹气，存储结果及报告",
-      ["nb"] = "???"
+      ["nb"] = "PEFlog gjør det enkelt å overvåke astmaen din, og hjelper deg å holde den i sjakk. Du trenger bare å Blåse, Lagre resultater, og lage Rapport"
     },
 
   ["Hello"] =
@@ -39,7 +39,7 @@ local translations = {
       ["fi"] = "Tallenna PEF1 tulokset ennen lääkkeen ottamista.",
       ["it"] = "Salva i risultati PEF1-prima del medicazione",
       ["zh"] = "药物治疗前存储PEF1结果",
-      ["nb"] = "Lagre PEF1-resultater før medisinering."
+      ["nb"] = "Lagre PEF1-resultater tatt før medisinering."
     },
 
   ["pef2.dialog.title"] =
@@ -57,7 +57,7 @@ local translations = {
       ["fi"] = "Tallenna PEF2 tulokset 15min lääkkeen ottamisen jälkeen.",
       ["it"] = "Salva i risulati PEF2-prima della medicazione.",
       ["zh"] = "药物治疗15分钟后存储PEF2结果",
-      ["nb"] = "Lagre PEF2-resultater 15 minutter etter medisinering."
+      ["nb"] = "Lagre PEF2-resultater tatt 15 minutter etter medisinering."
     },
 
   ["pef1.button"] =
@@ -147,7 +147,7 @@ local translations = {
       ["fi"] = "Uusi ohjelmistoversio!",
       ["it"] = "???",
       ["zh"] = "新应用版本！",
-      ["nb"] = "???"
+      ["nb"] = "Ny versjon!"
     },
 
   ["new.appversion.migrate.text"] =
@@ -156,7 +156,7 @@ local translations = {
       ["fi"] = "Arkisto sisältää tallennettuja tietoja. Mikäli haluat käyttää arkiston tietoja, niin palauta tiedot.\n\nTämä muistutus näytetään kolme kertaa.\n\nPalauta nyt?",
       ["it"] = "???",
       ["zh"] = "档案保留存储结果。如果你还需要这些数据，可以现在恢复。\n\n这一提醒会显示三次。\n\n现在恢复？",
-      ["nb"] = "???"
+      ["nb"] = "Arkivet inneholder lagrede data. Dersom du trenger disse kan du gjennopprette dem nå.\n\nTenne påminnelsen vil komme tre ganger.\n\nGjennopprett?"
     },
 
   ["new.appversion.migratefinal.text"] =
@@ -165,7 +165,7 @@ local translations = {
       ["fi"] = "Tämä on viimeinen muistutus datan palauttamiseksi arkistosta\n\nPalauta nyt?",
       ["it"] = "???",
       ["zh"] = "这是最后一次提醒从档案中恢复数据。\n\n现在恢复？",
-      ["nb"] = "???"
+      ["nb"] = "Dette er siste varsel om å gjenopprette data fra arkivet.\n\nGjenopprett?"
     },
 
   ["new.logtab.hint"] =
@@ -174,7 +174,7 @@ local translations = {
       ["fi"] = "Voit merkitä seurantajakson alun tuplaklikkaamalla.\n\nJaksoja voi piilottaa näkyvistä yhdellä klikkauksella.\n\nVain näkyvissä olevat jaksot tulevat raporttiin.",
       ["it"] = "???",
       ["zh"] = "你可以通过双击设置监控时期的起始时间。\n\n单击可以隐藏时期。\n\n只有可见的时期会出现在报告上。",
-      ["nb"] = "???"
+      ["nb"] = "Du kan sette starten på en overvåkningsperiode med dobbelklikk.\n\nPerioder kan skjules med et enkeltklikk.\n\nBare synlige perioder vil vises i rapporten."
     },
 
   ["notify.archive.empty"] =
@@ -183,7 +183,7 @@ local translations = {
       ["fi"] = "Arkisto on tyhjä.",
       ["it"] = "???",
       ["zh"] = "存档为空",
-      ["nb"] = "???"
+      ["nb"] = "Arkivet er tomt."
     },
 
   ["send"] =
@@ -282,7 +282,7 @@ local translations = {
       ["fi"] = "Ikä",
       ["it"] = "???",
       ["zh"] = "年龄",
-      ["nb"] = "???"
+      ["nb"] = "Alder"
     },
 
   ["preferences.height.text"] =
@@ -309,7 +309,7 @@ local translations = {
       ["fi"] = "Sukupuoli",
       ["it"] = "???",
       ["zh"] = "性别",
-      ["nb"] = "???"
+      ["nb"] = "Kjønn"
     },
 
   ["preferences.gender.male"] =
@@ -318,7 +318,7 @@ local translations = {
       ["fi"] = "Mies",
       ["it"] = "???",
       ["zh"] = "男",
-      ["nb"] = "???"
+      ["nb"] = "Mann"
     },
 
   ["preferences.gender.female"] =
@@ -327,7 +327,7 @@ local translations = {
       ["fi"] = "Nainen",
       ["it"] = "???",
       ["zh"] = "女",
-      ["nb"] = "???"
+      ["nb"] = "Kvinne"
     },
 
   ["preferences.email.text"] =
@@ -481,7 +481,7 @@ local translations = {
       ["fi"] = "Vihreä = Viite PEF",
       ["it"] = "??? = ???",
       ["zh"] = "绿色 = 参考PEF",
-      ["nb"] = "??? = ???"
+      ["nb"] = "Grønn = Referanse-PEF"
     },
 
   ["height"] =
@@ -517,7 +517,7 @@ local translations = {
       ["fi"] = "Vinkki!",
       ["it"] = "???",
       ["zh"] = "提示",
-      ["nb"] = "???"
+      ["nb"] = "Tips!"
     },
 
   ["warning.dialog.title"] =
