@@ -330,6 +330,24 @@ local translations = {
       ["nb"] = "???"
     },
 
+  ["preferences.personalbest.text"] =
+    {
+      ["en"] = "My best PEF1",
+      ["fi"] = "Oma paras PEF1",
+      ["it"] = "Il mio meglio PEF1",
+      ["zh"] = "我最好的PEF1",
+      ["nb"] = "Mitt beste PEF1"
+    },
+
+  ["preferences.automatic.text"] =
+    {
+      ["en"] = "automatic",
+      ["fi"] = "automaattinen",
+      ["it"] = "automatico",
+      ["zh"] = "自动",
+      ["nb"] = "automatisk"
+    },
+
   ["preferences.email.text"] =
     {
       ["en"] = "Send report to this email",
@@ -478,9 +496,18 @@ local translations = {
   ["report.legend.4"] =
     {
       ["en"] = "Green = Reference PEF",
-      ["fi"] = "Vihreä = Viite PEF",
+      ["fi"] = "Vihreä = Referenssi PEF",
       ["it"] = "??? = ???",
       ["zh"] = "绿色 = 参考PEF",
+      ["nb"] = "??? = ???"
+    },
+
+  ["report.reference.pef"] =
+    {
+      ["en"] = "Reference PEF1",
+      ["fi"] = "Referenssi PEF1",
+      ["it"] = "??? = ???",
+      ["zh"] = "绿色 = 参考PEF1",
       ["nb"] = "??? = ???"
     },
 
@@ -540,11 +567,11 @@ local translations = {
 
   ["warning.input.number"] =
   {
-    ["en"] = "Please enter number 1-240",
-    ["fi"] = "Anna numero väliltä 1-240",
-    ["it"] = "Inserire il numero 1-240",
-    ["zh"] = "输入号码 1-240",
-    ["nb"] = "Skriv inn nummeret 1- 240"
+    ["en"] = "Please enter number",
+    ["fi"] = "Anna numero",
+    ["it"] = "Inserire il numero",
+    ["zh"] = "输入号码",
+    ["nb"] = "Skriv inn nummeret"
   },
 
   ["save.button"] =
