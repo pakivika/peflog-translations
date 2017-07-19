@@ -2,7 +2,7 @@
 --
 -- (c) Pasi Kivikangas 2017
 --
--- Thanks: Jari Nysteds, Antonio Aloisio, Peng Zhang
+-- Thanks: Jari Nysted, Antonio Aloisio, Peng Zhang
 --
 
 local translations = {
