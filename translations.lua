@@ -589,7 +589,7 @@ local translations = {
       ["fi"] = "Takaisin",
       ["it"] = "<",
       ["zh"] = "返回",
-      ["nb"] = "<"
+      ["nb"] = "Tilbake"
     },
 
   ["01"] =
@@ -770,7 +770,7 @@ local translations = {
 function translations.getLanguage()
   local language = system.getPreference( "locale", "language" )
   --if not language == "en" or not language == "fi" or not language == "nb" or not language == "it" then language = "en" end
-  if language == "en" or language == "fi" or language == "zh" then 
+  if language == "en" or language == "fi" or language == "zh" or language == "nb" then 
     return language
     --return "fi"
   else
@@ -782,6 +782,7 @@ function translations.getWebLanguage()
   local language = system.getPreference( "locale", "language" )
   if language == "en" or language == "fi" then 
     return language
+    --return "fi"
   else
     return "en"
   end
