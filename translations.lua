@@ -508,7 +508,7 @@ local translations = {
       ["fi"] = "Referenssi PEF1",
       ["it"] = "??? = ???",
       ["zh"] = "绿色 = 参考PEF1",
-      ["nb"] = "??? = ???"
+      ["nb"] = "Referanse-PEF1"
     },
 
   ["height"] =
