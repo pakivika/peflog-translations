@@ -386,11 +386,11 @@ local translations = {
 
   ["email.top"] =
     {
-      ["en"] = "Hi,\n\nHere are the PEF-results I have measured.\n\nPEF1 (blue line) is the result before taking the medicine.\nPEF2 (orange bar) is the result after taking the medicine.\nDaily variation (blue bar) and bronchodilatation response (orange bar) are calculated both as percentage and as l/min.\n\n",
-      ["fi"] = "Hei,\n\nTässä ovat mittaamani PEF-tulokset.\n\nPEF1 (sininen viiva) on tulos ennen lääkkeen ottamista.\nPEF2 (oranssi pylväs) on tulos lääkkeen ottamisen jälkeen.\nPäivittäisvaihtelu (sininen pylväs) ja bronkodilataatiovaste (oranssi pylväs) on laskettu sekä prosentteina että l/min.\n\n",
-      ["it"] = "Ciao,\n\nEcco i risultati PEF-misurati.\n\nPEF1 (linea blu) e' il risultato prima dell assunzione del medicinale.\nPEF2 (colonna arancio) e' il risultato dopo l assunzione del medicinale.\nLa variazione giornaliera (colonna blu) e la broncodilatazione (colonna arancio) e' calcolata come percentuale e come l/min.\n\n",
-      ["zh"] = "你好，\n\n这是测量的PEF结果。 \n\nPEF1（蓝色线）是服药前的结果。\nPEF2（橙色线）是服药后结果。\n每日变动（蓝色条）和支气管扩张反应（橙色条）根据百分比和 l/min计算得出。\n\n",
-      ["nb"] = "Hei,\n\nHer er mine målte PEF-resultater.\n\nPEF1 (blått linje) er resultatet før medisinering.\nPEF2 (oransje kolonne) er resultatet etter medisinering.\nDaglig variasjon (blå kolonne) og bronkodilatasjonsrespons (oransje kolonne) er beregnet i prosent og l/min.\n\n"
+      ["en"] = "Hi,\n\nHere are the PEF-results I have measured.\n\nPEF1 (blue line) is the result before taking the medicine.\nPEF2 (orange) is the result after taking the medicine.\nDaily variation (blue bar) and bronchodilatation (orange) are calculated both as percentage and as l/min.\n\n",
+      ["fi"] = "Hei,\n\nTässä ovat mittaamani PEF-tulokset.\n\nPEF1 (sininen viiva) on tulos ennen lääkkeen ottamista.\nPEF2 (oranssi) on tulos lääkkeen ottamisen jälkeen.\nPäivittäisvaihtelu (sininen pylväs) ja bronkodilataatiovaste (oranssi) on laskettu sekä prosentteina että l/min.\n\n",
+      ["it"] = "Ciao,\n\nEcco i risultati PEF-misurati.\n\nPEF1 (linea blu) e' il risultato prima dell assunzione del medicinale.\nPEF2 (arancio) e' il risultato dopo l assunzione del medicinale.\nLa variazione giornaliera (colonna blu) e la broncodilatazione (arancio) e' calcolata come percentuale e come l/min.\n\n",
+      ["zh"] = "你好，\n\n这是测量的PEF结果。 \n\nPEF1（蓝色线）是服药前的结果。\nPEF2（橙色）是服药后结果。\n每日变动（蓝色条）和支气管扩张反应（橙色）根据百分比和 l/min计算得出。\n\n",
+      ["nb"] = "Hei,\n\nHer er mine målte PEF-resultater.\n\nPEF1 (blått linje) er resultatet før medisinering.\nPEF2 (oransje) er resultatet etter medisinering.\nDaglig variasjon (blå kolonne) og bronkodilatasjonsrespons (oransje kolonne) er beregnet i prosent og l/min.\n\n"
     },
 
   ["email.bottom"] =
