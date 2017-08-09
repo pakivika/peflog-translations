@@ -765,14 +765,13 @@ local translations = {
 }
 
 
---translations["1. save title"][language]
+-- Usage: translations[key][language]
+-- Example: translations["1. save title"][language]
 
 function translations.getLanguage()
   local language = system.getPreference( "locale", "language" )
-  --if not language == "en" or not language == "fi" or not language == "nb" or not language == "it" then language = "en" end
   if language == "en" or language == "fi" or language == "zh" or language == "nb" then 
     return language
-    --return "fi"
   else
     return "en"
   end
@@ -782,7 +781,6 @@ function translations.getWebLanguage()
   local language = system.getPreference( "locale", "language" )
   if language == "en" or language == "fi" then 
     return language
-    --return "fi"
   else
     return "en"
   end
